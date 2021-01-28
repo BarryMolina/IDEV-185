@@ -4,6 +4,7 @@ using namespace std;
 
 int main() {
     int numStudents;
+    string student;
     string firstStudent;
     string lastStudent;
     string newScreen;
@@ -29,12 +30,28 @@ int main() {
         cin >> numStudents;
     }
 
-    for (int x = 0; x < numStudents; x++)
+    cout << newScreen;
+    cout << "Enter student 1: ";
+    cin >> firstStudent;
+    lastStudent = firstStudent;
+    for (int x = 1; x < numStudents; x++)
     {
-        cout << "Enter a student name: ";
-
-
+        cout << "\nEnter student " << x + 1 << ": ";
+        cin >> student;
+        if (student < firstStudent)
+        {
+            firstStudent = student;
+        }
+        else if (student > lastStudent)
+        {
+            lastStudent = student;
+        }
     }
+
+    cout << newScreen;
+    cout << "The student at the front of the line is: " << firstStudent << endl;
+    cout << "The student at the end of the line is: " << lastStudent << endl;
+    cout << "\n\nThank you for using the StudentLineUp app. Goodbye." << endl;
 
     return 0;
 }
