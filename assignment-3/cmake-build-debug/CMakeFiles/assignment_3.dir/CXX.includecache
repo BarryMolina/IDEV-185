@@ -9,6 +9,10 @@
 /Users/barrymolina/MATC/SP2021/c++/assignment-3/main.cpp
 iostream
 -
+sstream
+-
+string
+-
 iomanip
 -
 
