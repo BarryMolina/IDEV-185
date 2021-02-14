@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/barrymolina/MATC/SP2021/c++/assignment-5/Reel.h
+string
+-
+
+/Users/barrymolina/MATC/SP2021/c++/assignment-5/SlotMachine.h
+Reel.h
+/Users/barrymolina/MATC/SP2021/c++/assignment-5/Reel.h
+
+/Users/barrymolina/MATC/SP2021/c++/assignment-5/main.cpp
+iostream
+-
+string
+-
+SlotMachine.h
+/Users/barrymolina/MATC/SP2021/c++/assignment-5/SlotMachine.h
+
