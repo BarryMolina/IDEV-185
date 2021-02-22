@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment6/Die.h
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment6/Player.cpp
+Player.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment6/Player.h
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment6/Player.h
+Die.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment6/Die.h
+
