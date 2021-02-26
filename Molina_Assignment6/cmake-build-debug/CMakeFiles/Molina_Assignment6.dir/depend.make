@@ -9,5 +9,6 @@ CMakeFiles/Molina_Assignment6.dir/Player.cpp.o: ../Player.cpp
 CMakeFiles/Molina_Assignment6.dir/Player.cpp.o: ../Player.h
 
 CMakeFiles/Molina_Assignment6.dir/main.cpp.o: ../Die.h
+CMakeFiles/Molina_Assignment6.dir/main.cpp.o: ../Player.h
 CMakeFiles/Molina_Assignment6.dir/main.cpp.o: ../main.cpp
 

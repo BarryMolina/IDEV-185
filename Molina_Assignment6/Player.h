@@ -10,16 +10,18 @@
 class Player {
 
 private:
-    Die dice[20];
+    static const int NUM_DICE = 20;
+    Die dice[NUM_DICE];
     int playerNumber;
-    int sumOfDice;
+    int sumOfDice = 0;
 
 public:
     Player();
+    Player(int);
     void play();
     int getNumberOfDice();
     int getPlayerNumber();
-    int getSingleDieValue();
+    int getSingleDieValue(int);
     int getSumOfDice();
     void setPlayerNumber(int);
 };
