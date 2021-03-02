@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment7/Coin.cpp
+cstdlib
+-
+ctime
+-
+Coin.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment7/Coin.h
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment7/Coin.h
+string
+-
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment7/main.cpp
+iostream
+-
+iomanip
+-
+Coin.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment7/Coin.h
+
