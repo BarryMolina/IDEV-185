@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Molina_Midterm"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Molina_Midterm">
+				<Option output="/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Molina_Midterm" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 Molina_Midterm"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Molina_Midterm/fast">
+				<Option output="/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Molina_Midterm" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 Molina_Midterm/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/FreshProduce.cpp">
+			<Option target="Molina_Midterm"/>
+		</Unit>
+		<Unit filename="/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/FreshProduce.h">
+			<Option target="Molina_Midterm"/>
+		</Unit>
+		<Unit filename="/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/Item.cpp">
+			<Option target="Molina_Midterm"/>
+		</Unit>
+		<Unit filename="/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/Item.h">
+			<Option target="Molina_Midterm"/>
+		</Unit>
+		<Unit filename="/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/MeasuredProduct.cpp">
+			<Option target="Molina_Midterm"/>
+		</Unit>
+		<Unit filename="/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/MeasuredProduct.h">
+			<Option target="Molina_Midterm"/>
+		</Unit>
+		<Unit filename="/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/main.cpp">
+			<Option target="Molina_Midterm"/>
+		</Unit>
+		<Unit filename="/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

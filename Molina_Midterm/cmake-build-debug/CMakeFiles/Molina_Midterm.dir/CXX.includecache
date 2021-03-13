@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/FreshProduce.h
+Item.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/Item.h
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/Item.h
+string
+-
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/MeasuredProduct.h
+Item.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/Item.h
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/main.cpp
+iostream
+-
+iomanip
+-
+vector
+-
+sstream
+-
+FreshProduce.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/FreshProduce.h
+MeasuredProduct.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Midterm/MeasuredProduct.h
+

@@ -52,3 +52,5 @@ void Coin::addBalance()
 {
     balance += value;
 }
+
+void Quarter::
