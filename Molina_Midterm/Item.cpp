@@ -17,6 +17,7 @@ Item::Item(string name, double price) {
     this->price = price;
 }
 
+// Getters & Setters
 double Item::getDelivery() {
     return delivery;
 }

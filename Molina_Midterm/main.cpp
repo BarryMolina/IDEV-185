@@ -1,3 +1,8 @@
+// Barry Molina
+// ITDEV-185-900
+// Midterm
+// 3/14/21
+
 #include <iostream>
 #include <iomanip>
 #include <vector>
@@ -60,6 +65,7 @@ int main() {
             clearOrder();
         }
     }
+    cout << "\nThank you for shopping with us. Goodbye.";
     return 0;
 }
 
