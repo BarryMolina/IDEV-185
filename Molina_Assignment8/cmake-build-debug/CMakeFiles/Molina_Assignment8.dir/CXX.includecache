@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment8/LinkedList.cpp
+LinkedList.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment8/LinkedList.h
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment8/LinkedList.h
+PersonNode.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment8/PersonNode.h
+string
+-
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment8/PersonNode.cpp
+PersonNode.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment8/PersonNode.h
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment8/PersonNode.h
+string
+-
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment8/main.cpp
+iostream
+-
+
