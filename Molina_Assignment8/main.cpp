@@ -68,7 +68,7 @@ void mainMenu() {
 void addContact() {
     string fName, lName, addressNum, streetName,
             streetType, phoneNum, address;
-    PersonNode *newPerson = nullptr;
+    PersonNode *newPerson;
 
     clearScreen();
     cout << "First Name: ";
@@ -110,6 +110,7 @@ void displayDirectory() {
             cout << endl;
             node = node->getNext();
         }
+        cout << "Tail: " << directory.getTailPtr()->getLName() << endl << endl;
     }
     cout << "Press <enter> to continue";
     cin.ignore();

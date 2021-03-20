@@ -20,6 +20,7 @@ public:
     LinkedList();
     void addLink(PersonNode *person);
     PersonNode* getHeadPtr();
+    PersonNode* getTailPtr();
     bool removePerson(string lName);
 };
 
