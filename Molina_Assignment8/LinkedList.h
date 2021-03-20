@@ -9,17 +9,18 @@
 #include <string>
 using namespace std;
 
-
+// This linked list represents a contact directory and includes
+// operations to add and remove links
 class LinkedList {
 private:
     PersonNode *headPtr;
     PersonNode *tailPtr;
+    PersonNode* findInsertSpot(string lName);
 public:
     LinkedList();
     void addLink(PersonNode *person);
-    PersonNode* findInsertSpot(string lName);
     PersonNode* getHeadPtr();
-    void removePerson(string lName);
+    bool removePerson(string lName);
 };
 
 

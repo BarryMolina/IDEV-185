@@ -4,6 +4,7 @@
 
 #include "PersonNode.h"
 
+// Getters and setters
 const string &PersonNode::getAddress() const {
     return address;
 }
@@ -44,11 +45,16 @@ void PersonNode::setNext(PersonNode *next) {
     PersonNode::next = next;
 }
 
-PersonNode::PersonNode(const string &address, const string &fName, const string &lName, const string &phone) : address(
-        address), fName(fName), lName(lName), phone(phone) {
+string PersonNode::getFullName() {
+    return lName + ", " + fName;
+}
+
+// Constructors
+PersonNode::PersonNode() {
     next = nullptr;
 }
 
-PersonNode::PersonNode() {
+PersonNode::PersonNode(const string &fName, const string &lName, const string &address, const string &phone) : fName(
+        fName), lName(lName), address(address), phone(phone) {
     next = nullptr;
 }

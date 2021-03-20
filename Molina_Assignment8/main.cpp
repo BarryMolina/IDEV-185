@@ -4,29 +4,36 @@
 // 3/15/21
 #include <iostream>
 #include <string>
-#include <iomanip>
 #include "LinkedList.h"
 #include "PersonNode.h";
-
 using namespace std;
 
+// UI functions
 void mainMenu();
-void addPerson();
-void displayList();
-void removePerson();
+void addContact();
+void displayDirectory();
+void displayContact(PersonNode*);
+void deleteContact();
 
+// Utility functions
+void clearScreen();
+
+// Global linked list object
 LinkedList directory;
 
 int main() {
+    mainMenu();
     return 0;
 }
 
+// User chooses linked list operation
 void mainMenu() {
     bool quit = false;
     int selection;
     while (!quit) {
+        clearScreen();
         cout << "Main Menu" << endl;
-        cout << "\nPlease select one of the following\n" << endl;
+        cout << "\nPlease select one of the following options\n" << endl;
         cout << "1. Add to Directory" << endl;
         cout << "2. Display Directory" << endl;
         cout << "3. Remove from Directory" << endl;
@@ -34,7 +41,7 @@ void mainMenu() {
         cout << "\n>>> ";
         cin >> selection;
 
-        while (selection < 1 || selection > 3) {
+        while (selection < 1 || selection > 4) {
             cout << "\nPlease select a valid option" << endl;
             cout << "\n>>> ";
             cin >> selection;
@@ -42,13 +49,13 @@ void mainMenu() {
 
         switch (selection) {
             case 1:
-                addPerson();
+                addContact();
                 break;
             case 2:
-                displayList();
+                displayDirectory();
                 break;
             case 3:
-                removePerson();
+                deleteContact();
                 break;
             case 4:
                 quit = true;
@@ -56,29 +63,97 @@ void mainMenu() {
         }
     }
 }
-void addPerson() {
-    int promptw = 30;
-    string fName, lName, addressNum,
-           streetName, streetType, phoneNum;
 
-    cout << setw(promptw) << "First Name:" << endl;
+// User enters new contact info
+void addContact() {
+    string fName, lName, addressNum, streetName,
+            streetType, phoneNum, address;
+    PersonNode *newPerson = nullptr;
+
+    clearScreen();
+    cout << "First Name: ";
     cin >> fName;
-    cout << setw(promptw) << "Last Name:" << endl;
+    cout << "Last Name: ";
     cin >> lName;
-    cout << setw(promptw) << "Address Number:" << endl;
+    cout << "Address Number: ";
     cin >> addressNum;
-    cout << setw(promptw) << "Address Street Name:" << endl;
+    cout << "Address Street Name: ";
     cin >> streetName;
-    cout << setw(promptw) << "Address Street Type (Str, Circle):" << endl;
+    cout << "Address Street Type (Str, Circle): ";
     cin >> streetType;
-    cout << setw(promptw) << "Phone Number:" << endl;
+    cout << "Phone Number: ";
     cin >> phoneNum;
+    address = addressNum + " " + streetName + " " + streetType;
 
+    newPerson = new PersonNode(fName, lName, address, phoneNum);
+    directory.addLink(newPerson);
 
+    clearScreen();
+    cout << "\nNew directory entry: \n" << endl;
+    displayContact(newPerson);
+    cout << "\nPress <enter> to continue";
+    cin.ignore();
+    cin.get();
 }
-void displayList() {
 
+// Display the directory
+void displayDirectory() {
+    clearScreen();
+    if (!directory.getHeadPtr()) {
+        cout << "The directory is empty.\n" << endl;
+    }
+    else {
+        PersonNode *node = directory.getHeadPtr();
+        cout << "Contacts\n" << endl;
+        while (node) {
+            displayContact(node);
+            cout << endl;
+            node = node->getNext();
+        }
+    }
+    cout << "Press <enter> to continue";
+    cin.ignore();
+    cin.get();
 }
-void removePerson() {
 
+// Format info for a single contact
+void displayContact(PersonNode* p) {
+    cout << p->getFullName() << endl;
+    cout << p->getAddress() << endl;
+    cout << p->getPhone() << endl;
+}
+
+// Remove entry from the directory
+void deleteContact() {
+    string lName;
+    bool success;
+
+    clearScreen();
+    if (!directory.getHeadPtr()) {
+        cout << "The directory is empty." << endl;
+    }
+    else {
+        cout << "Enter last name of contact to be removed: ";
+        cin >> lName;
+        success = directory.removePerson(lName);
+
+        clearScreen();
+        if (success) {
+            cout << "Removed contact with last name \"" << lName << "\"" << endl;
+        }
+        else {
+            cout << "Contact with last name \"" << lName << "\" not found." << endl;
+            cout << "No entries were removed." << endl;
+        }
+    }
+
+    cout << "\nPress <enter> to continue";
+    cin.ignore();
+    cin.get();
+}
+
+void clearScreen() {
+    string newScreen;
+    newScreen.assign(20, '\n');
+    cout << newScreen;
 }

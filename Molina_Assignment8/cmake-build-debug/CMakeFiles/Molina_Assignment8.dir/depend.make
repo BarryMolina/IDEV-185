@@ -8,5 +8,7 @@ CMakeFiles/Molina_Assignment8.dir/LinkedList.cpp.o: ../PersonNode.h
 CMakeFiles/Molina_Assignment8.dir/PersonNode.cpp.o: ../PersonNode.cpp
 CMakeFiles/Molina_Assignment8.dir/PersonNode.cpp.o: ../PersonNode.h
 
+CMakeFiles/Molina_Assignment8.dir/main.cpp.o: ../LinkedList.h
+CMakeFiles/Molina_Assignment8.dir/main.cpp.o: ../PersonNode.h
 CMakeFiles/Molina_Assignment8.dir/main.cpp.o: ../main.cpp
 

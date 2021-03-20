@@ -8,30 +8,29 @@
 #include <string>
 using namespace std;
 
-
+// This class is used to create node objects for a linked list.
+// It represents a person in a contact directory.
 class PersonNode {
 private:
-    string address;
     string fName;
     string lName;
+    string address;
     string phone;
     PersonNode *next;
 public:
     PersonNode();
-    PersonNode(const string &address, const string &fName, const string &lName, const string &phone);
+    PersonNode(const string &fName, const string &lName, const string &address, const string &phone);
     const string &getAddress() const;
-    void setAddress(const string &address);
     const string &getFName() const;
-    void setFName(const string &fName);
     const string &getLName() const;
-    void setLName(const string &lName);
     const string &getPhone() const;
-    void setPhone(const string &phone);
     PersonNode *getNext() const;
-    void setNext(PersonNode *next);
     string getFullName();
-
-
+    void setAddress(const string &address);
+    void setFName(const string &fName);
+    void setLName(const string &lName);
+    void setPhone(const string &phone);
+    void setNext(PersonNode *next);
 };
 
 
