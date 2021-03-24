@@ -4,6 +4,7 @@
 
 #include "ItemizedDeduction.h"
 
+
 double ItemizedDeduction::getHomeMortgageInterest() const {
     return homeMortgageInterest;
 }
@@ -60,7 +61,10 @@ ItemizedDeduction::ItemizedDeduction(double homeMortgageInterest, double incomeT
 }
 
 double ItemizedDeduction::calcDeduction() {
-    return homeMortgageInterest + incomeTaxes + investmentInterest +
-    medicalExpenses + charitableContributions + miscDeductions;
+    double deduction = homeMortgageInterest + incomeTaxes + investmentInterest +
+                       medicalExpenses + charitableContributions + miscDeductions;
+
+    return deduction;
 }
 
+ItemizedDeduction::ItemizedDeduction() {}

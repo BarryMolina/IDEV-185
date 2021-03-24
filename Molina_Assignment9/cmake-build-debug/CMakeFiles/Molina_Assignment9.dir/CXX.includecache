@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/Deduction.h
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/FilingStatus.h
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/ItemizedDeduction.h
+Deduction.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/Deduction.h
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/StandardDeduction.h
+Deduction.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/Deduction.h
+FilingStatus.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/FilingStatus.h
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/TaxReturn.h
+Deduction.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/Deduction.h
+FilingStatus.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/FilingStatus.h
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/main.cpp
+iostream
+-
+string
+-
+iomanip
+-
+Deduction.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/Deduction.h
+StandardDeduction.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/StandardDeduction.h
+ItemizedDeduction.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/ItemizedDeduction.h
+FilingStatus.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/FilingStatus.h
+TaxReturn.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/TaxReturn.h
+

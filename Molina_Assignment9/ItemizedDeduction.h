@@ -7,7 +7,7 @@
 
 #include "Deduction.h"
 
-class ItemizedDeduction : Deduction {
+class ItemizedDeduction : public Deduction {
 private:
     double homeMortgageInterest = 0;
     double incomeTaxes = 0;
@@ -28,8 +28,11 @@ public:
     void setCharitableContributions(double charitableContributions);
     double getMiscDeductions() const;
     void setMiscDeductions(double miscDeductions);
-    ItemizedDeduction(double homeMorgageInterest, double incomeTaxes, double investmentInterest,
+    ItemizedDeduction(double homeMortgageInterest, double incomeTaxes, double investmentInterest,
                       double medicalExpenses, double charitableContributions, double miscDeductions);
+
+    ItemizedDeduction();
+
     double calcDeduction() override;
 
 };

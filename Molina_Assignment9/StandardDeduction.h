@@ -6,17 +6,22 @@
 #define MOLINA_ASSIGNMENT9_STANDARDDEDUCTION_H
 
 #include "Deduction.h"
+#include "FilingStatus.h"
 
 
-class StandardDeduction : Deduction {
+class StandardDeduction : public Deduction {
 private:
-    const double singleFiler = 12400;
-    const double headOfHousehold = 18650;
-    const double filingJointly = 24800;
+    static const double single_filer;
+    static const double head_of_household;
+    static const double filing_jointly;
+    FilingStatus filingStatus;
+
 public:
-    const double getSingleFiler() const;
-    const double getHeadOfHousehold() const;
-    const double getFilingJointly() const;
+    StandardDeduction(FilingStatus filingStatus);
+
+    static const double getSingleFiler();
+    static const double getHeadOfHousehold();
+    static const double getFilingJointly();
     double calcDeduction() override;
 
 };

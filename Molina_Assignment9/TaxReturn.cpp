@@ -4,7 +4,7 @@
 
 #include "TaxReturn.h"
 
-const int TaxReturn::num_brackets = 7;
+const int TaxReturn::num_brackets = 6;
 const int TaxReturn::tax_rates[] = { 10, 12, 22, 24, 32, 35, 37 };
 const double TaxReturn::single_brackets [] = {
         9875.00,
@@ -47,7 +47,19 @@ TaxReturn::TaxReturn(double grossIncome, FilingStatus filingStatus) : grossIncom
 }
 
 int TaxReturn::calcTaxRate() {
-
+    double income = calcTaxableIncome();
+    int rate;
+    bool foundIt = false;
+    for (int x = 0; x < num_brackets && !foundIt; x++) {
+        if (income < taxBrackets[x]) {
+            rate = tax_rates[x];
+            foundIt = true;
+        }
+    }
+    if (!foundIt) {
+        rate = tax_rates[num_brackets];
+    }
+    return rate;
 }
 
 double TaxReturn::calcTaxableIncome() {

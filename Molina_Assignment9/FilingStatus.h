@@ -5,10 +5,10 @@
 #ifndef MOLINA_ASSIGNMENT9_FILINGSTATUS_H
 #define MOLINA_ASSIGNMENT9_FILINGSTATUS_H
 
-#endif //MOLINA_ASSIGNMENT9_FILINGSTATUS_H
-
 enum class FilingStatus {
     Single,
     Jointly,
     HeadOfHousehold
 };
+
+#endif //MOLINA_ASSIGNMENT9_FILINGSTATUS_H
