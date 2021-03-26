@@ -3,3 +3,7 @@
 //
 
 #include "Deduction.h"
+
+std::string Deduction::getDeductionType() {
+    return "Deduction";
+}

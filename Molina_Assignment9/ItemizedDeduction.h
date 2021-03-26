@@ -30,9 +30,8 @@ public:
     void setMiscDeductions(double miscDeductions);
     ItemizedDeduction(double homeMortgageInterest, double incomeTaxes, double investmentInterest,
                       double medicalExpenses, double charitableContributions, double miscDeductions);
-
     ItemizedDeduction();
-
+    std::string getDeductionType() override;
     double calcDeduction() override;
 
 };

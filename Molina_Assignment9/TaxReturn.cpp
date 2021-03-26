@@ -69,3 +69,27 @@ double TaxReturn::calcTaxableIncome() {
 double TaxReturn::calcTaxOwed() {
     return calcTaxableIncome() * calcTaxRate() / 100;
 }
+
+Deduction *TaxReturn::getDeduction() const {
+    return deduction;
+}
+
+FilingStatus TaxReturn::getFilingStatus() const {
+    return filingStatus;
+}
+
+double TaxReturn::getGrossIncome() const {
+    return grossIncome;
+}
+
+void TaxReturn::setDeduction(Deduction *deduction) {
+    TaxReturn::deduction = deduction;
+}
+
+void TaxReturn::setFilingStatus(FilingStatus filingStatus) {
+    TaxReturn::filingStatus = filingStatus;
+}
+
+void TaxReturn::setGrossIncome(double grossIncome) {
+    TaxReturn::grossIncome = grossIncome;
+}

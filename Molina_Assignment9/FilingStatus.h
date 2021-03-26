@@ -11,4 +11,6 @@ enum class FilingStatus {
     HeadOfHousehold
 };
 
+static const char *status_str [] = {"Single", "Jointly", "Head of household"};
+
 #endif //MOLINA_ASSIGNMENT9_FILINGSTATUS_H

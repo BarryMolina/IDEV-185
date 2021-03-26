@@ -23,6 +23,8 @@ public:
     static const double getHeadOfHousehold();
     static const double getFilingJointly();
     double calcDeduction() override;
+    std::string getDeductionType() override;
+    FilingStatus getFilingStatus() const;
 
 };
 

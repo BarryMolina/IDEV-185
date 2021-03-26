@@ -35,3 +35,11 @@ const double StandardDeduction::getFilingJointly() {
 }
 
 StandardDeduction::StandardDeduction(FilingStatus filingStatus) : filingStatus(filingStatus) {}
+
+FilingStatus StandardDeduction::getFilingStatus() const {
+    return filingStatus;
+}
+
+std::string StandardDeduction::getDeductionType() {
+    return "Standard";
+}

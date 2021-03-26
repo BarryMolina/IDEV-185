@@ -68,3 +68,7 @@ double ItemizedDeduction::calcDeduction() {
 }
 
 ItemizedDeduction::ItemizedDeduction() {}
+
+std::string ItemizedDeduction::getDeductionType() {
+    return "Itemized";
+}

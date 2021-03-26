@@ -22,6 +22,16 @@ private:
     double grossIncome;
 public:
     TaxReturn(double grossIncome, FilingStatus filingStatus);
+    Deduction *getDeduction() const;
+    FilingStatus getFilingStatus() const;
+    double getGrossIncome() const;
+
+    void setDeduction(Deduction *deduction);
+
+    void setFilingStatus(FilingStatus filingStatus);
+
+    void setGrossIncome(double grossIncome);
+
     int calcTaxRate();
     double calcTaxableIncome();
     double calcTaxOwed();
