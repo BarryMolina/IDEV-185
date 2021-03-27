@@ -92,7 +92,8 @@ int TaxReturn::calcTaxRate() {
 
 // Calculate taxable income
 double TaxReturn::calcTaxableIncome() {
-    return grossIncome - (deduction ? deduction->calcDeduction() : 0);
+    double taxableIncome = grossIncome - (deduction ? deduction->calcDeduction() : 0);
+    return (taxableIncome > 0 ? taxableIncome : 0);
 }
 
 // Calculate the amount of tax owed

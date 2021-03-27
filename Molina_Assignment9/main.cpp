@@ -32,6 +32,7 @@ void mainMenu() {
     TaxReturn *taxReturn = nullptr;
     Deduction *deduction = nullptr;
     int ans;
+    string again;
     clearScreen();
     cout << "Main Menu" << endl;
     cout << "1. Create New Tax Return" << endl;
@@ -45,15 +46,21 @@ void mainMenu() {
         cin >> ans;
     }
     if (ans == 1) {
-        taxReturn = createReturn();
-        deduction = createDeduction(taxReturn->getFilingStatus());
-        taxReturn->setDeduction(deduction);
-        taxReturnSummary(taxReturn);
+        do {
+            taxReturn = createReturn();
+            deduction = createDeduction(taxReturn->getFilingStatus());
+            taxReturn->setDeduction(deduction);
+            taxReturnSummary(taxReturn);
 
-        // deduction deleted in TaxReturn destructor
-        delete taxReturn;
-        taxReturn = nullptr;
-        deduction = nullptr;
+            // deduction deleted in TaxReturn destructor
+            delete taxReturn;
+            taxReturn = nullptr;
+            deduction = nullptr;
+
+            cout << "\nWould you like to create a new return? y/n: ";
+            cin >> again;
+
+        } while (tolower(again[0]) == 'y');
     }
 }
 
@@ -132,6 +139,7 @@ Deduction *createDeduction(FilingStatus filingStatus) {
 
 // Display tax return summary
 void taxReturnSummary(TaxReturn *taxReturn) {
+    clearScreen();
     cout << fixed << setprecision(2);
     cout << "Filing Status: " << status_str[int(taxReturn->getFilingStatus())] << endl;
     cout << "Gross Income: $" << taxReturn->getGrossIncome() << endl;
@@ -139,7 +147,7 @@ void taxReturnSummary(TaxReturn *taxReturn) {
     cout << "Deduction Amount: $" << taxReturn->getDeduction()->calcDeduction() << endl;
     cout << "Taxable Income: $" << taxReturn->calcTaxableIncome() << endl;
     cout << "Tax Rate: " << taxReturn->calcTaxRate() << "%" << endl;
-    cout << "Tax Owed for " << year << ": $" << taxReturn->calcTaxOwed();
+cout << "Tax Owed for " << year << ": $" << taxReturn->calcTaxOwed() << endl;
 }
 
 void clearScreen() {
