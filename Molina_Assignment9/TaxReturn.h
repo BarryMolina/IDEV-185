@@ -8,6 +8,7 @@
 #include "Deduction.h"
 #include "FilingStatus.h"
 
+// This class represents a simplified tax return.
 class TaxReturn {
 private:
     static const int num_brackets;
@@ -25,18 +26,13 @@ public:
     Deduction *getDeduction() const;
     FilingStatus getFilingStatus() const;
     double getGrossIncome() const;
-
     void setDeduction(Deduction *deduction);
-
     void setFilingStatus(FilingStatus filingStatus);
-
     void setGrossIncome(double grossIncome);
-
     int calcTaxRate();
     double calcTaxableIncome();
     double calcTaxOwed();
-
-
+    virtual ~TaxReturn();
 };
 
 

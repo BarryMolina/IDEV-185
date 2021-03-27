@@ -4,7 +4,17 @@
 
 #include "ItemizedDeduction.h"
 
+// Constructors
+ItemizedDeduction::ItemizedDeduction() {}
 
+ItemizedDeduction::ItemizedDeduction(double homeMortgageInterest, double incomeTaxes, double investmentInterest,
+                                     double medicalExpenses, double charitableContributions, double miscDeductions)
+        : homeMortgageInterest(homeMortgageInterest), incomeTaxes(incomeTaxes), investmentInterest(investmentInterest),
+          medicalExpenses(medicalExpenses), charitableContributions(charitableContributions),
+          miscDeductions(miscDeductions) {
+}
+
+// Getters and setters
 double ItemizedDeduction::getHomeMortgageInterest() const {
     return homeMortgageInterest;
 }
@@ -53,22 +63,15 @@ void ItemizedDeduction::setMiscDeductions(double miscDeductions) {
     ItemizedDeduction::miscDeductions = miscDeductions;
 }
 
-ItemizedDeduction::ItemizedDeduction(double homeMortgageInterest, double incomeTaxes, double investmentInterest,
-                                     double medicalExpenses, double charitableContributions, double miscDeductions)
-        : homeMortgageInterest(homeMortgageInterest), incomeTaxes(incomeTaxes), investmentInterest(investmentInterest),
-          medicalExpenses(medicalExpenses), charitableContributions(charitableContributions),
-          miscDeductions(miscDeductions) {
-}
-
-double ItemizedDeduction::calcDeduction() {
-    double deduction = homeMortgageInterest + incomeTaxes + investmentInterest +
-                       medicalExpenses + charitableContributions + miscDeductions;
-
-    return deduction;
-}
-
-ItemizedDeduction::ItemizedDeduction() {}
-
+// Overridden base class function
 std::string ItemizedDeduction::getDeductionType() {
     return "Itemized";
 }
+
+// Overridden base class function
+// Calculate deduction by adding up all expense categories
+double ItemizedDeduction::calcDeduction() {
+    return homeMortgageInterest + incomeTaxes + investmentInterest +
+           medicalExpenses + charitableContributions + miscDeductions;
+}
+

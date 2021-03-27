@@ -5,6 +5,7 @@
 #include "TaxReturn.h"
 
 const int TaxReturn::num_brackets = 6;
+// Parallel arrays holding tax information for 2020
 const int TaxReturn::tax_rates[] = { 10, 12, 22, 24, 32, 35, 37 };
 const double TaxReturn::single_brackets [] = {
         9875.00,
@@ -31,6 +32,7 @@ const double TaxReturn::joint_brackets [] = {
         622050.00,
 };
 
+// Constructor points taxBrackets to static bracket array based on filing status
 TaxReturn::TaxReturn(double grossIncome, FilingStatus filingStatus) : grossIncome(grossIncome),
                                                                       filingStatus(filingStatus) {
     switch (filingStatus) {
@@ -46,30 +48,7 @@ TaxReturn::TaxReturn(double grossIncome, FilingStatus filingStatus) : grossIncom
     }
 }
 
-int TaxReturn::calcTaxRate() {
-    double income = calcTaxableIncome();
-    int rate;
-    bool foundIt = false;
-    for (int x = 0; x < num_brackets && !foundIt; x++) {
-        if (income < taxBrackets[x]) {
-            rate = tax_rates[x];
-            foundIt = true;
-        }
-    }
-    if (!foundIt) {
-        rate = tax_rates[num_brackets];
-    }
-    return rate;
-}
-
-double TaxReturn::calcTaxableIncome() {
-    return grossIncome - (deduction ? deduction->calcDeduction() : 0);
-}
-
-double TaxReturn::calcTaxOwed() {
-    return calcTaxableIncome() * calcTaxRate() / 100;
-}
-
+// Getters and setters
 Deduction *TaxReturn::getDeduction() const {
     return deduction;
 }
@@ -92,4 +71,35 @@ void TaxReturn::setFilingStatus(FilingStatus filingStatus) {
 
 void TaxReturn::setGrossIncome(double grossIncome) {
     TaxReturn::grossIncome = grossIncome;
+}
+
+// Calculate tax rate based on the amount of taxable income
+int TaxReturn::calcTaxRate() {
+    double income = calcTaxableIncome();
+    int rate;
+    bool foundIt = false;
+    for (int x = 0; x < num_brackets && !foundIt; x++) {
+        if (income < taxBrackets[x]) {
+            rate = tax_rates[x];
+            foundIt = true;
+        }
+    }
+    if (!foundIt) {
+        rate = tax_rates[num_brackets];
+    }
+    return rate;
+}
+
+// Calculate taxable income
+double TaxReturn::calcTaxableIncome() {
+    return grossIncome - (deduction ? deduction->calcDeduction() : 0);
+}
+
+// Calculate the amount of tax owed
+double TaxReturn::calcTaxOwed() {
+    return calcTaxableIncome() * calcTaxRate() / 100;
+}
+
+TaxReturn::~TaxReturn() {
+    delete deduction;
 }

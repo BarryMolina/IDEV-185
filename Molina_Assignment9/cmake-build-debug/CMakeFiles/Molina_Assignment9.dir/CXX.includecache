@@ -6,21 +6,37 @@
 
 #IncludeRegexTransform: 
 
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/Deduction.cpp
+Deduction.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/Deduction.h
+
 /Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/Deduction.h
 string
 -
 
 /Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/FilingStatus.h
 
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/ItemizedDeduction.cpp
+ItemizedDeduction.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/ItemizedDeduction.h
+
 /Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/ItemizedDeduction.h
 Deduction.h
 /Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/Deduction.h
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/StandardDeduction.cpp
+StandardDeduction.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/StandardDeduction.h
 
 /Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/StandardDeduction.h
 Deduction.h
 /Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/Deduction.h
 FilingStatus.h
 /Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/FilingStatus.h
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/TaxReturn.cpp
+TaxReturn.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/TaxReturn.h
 
 /Users/barrymolina/MATC/SP2021/c++/Molina_Assignment9/TaxReturn.h
 Deduction.h

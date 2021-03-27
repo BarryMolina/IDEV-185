@@ -7,8 +7,10 @@
 
 #include "Deduction.h"
 
+// Derived class representing a deduction that has been itemized
 class ItemizedDeduction : public Deduction {
 private:
+    // Expense categories that can be deducted
     double homeMortgageInterest = 0;
     double incomeTaxes = 0;
     double investmentInterest = 0;
@@ -16,22 +18,22 @@ private:
     double charitableContributions = 0;
     double miscDeductions = 0;
 public:
-    double getHomeMortgageInterest() const;
-    void setHomeMortgageInterest(double homeMortgageInterest);
-    double getIncomeTaxes() const;
-    void setIncomeTaxes(double incomeTaxes);
-    double getInvestmentInterest() const;
-    void setInvestmentInterest(double investmentInterest);
-    double getMedicalExpenses() const;
-    void setMedicalExpenses(double medicalExpenses);
-    double getCharitableContributions() const;
-    void setCharitableContributions(double charitableContributions);
-    double getMiscDeductions() const;
-    void setMiscDeductions(double miscDeductions);
+    ItemizedDeduction();
     ItemizedDeduction(double homeMortgageInterest, double incomeTaxes, double investmentInterest,
                       double medicalExpenses, double charitableContributions, double miscDeductions);
-    ItemizedDeduction();
+    double getHomeMortgageInterest() const;
+    double getIncomeTaxes() const;
+    double getInvestmentInterest() const;
+    double getMedicalExpenses() const;
+    double getCharitableContributions() const;
+    double getMiscDeductions() const;
     std::string getDeductionType() override;
+    void setHomeMortgageInterest(double homeMortgageInterest);
+    void setIncomeTaxes(double incomeTaxes);
+    void setInvestmentInterest(double investmentInterest);
+    void setMedicalExpenses(double medicalExpenses);
+    void setCharitableContributions(double charitableContributions);
+    void setMiscDeductions(double miscDeductions);
     double calcDeduction() override;
 
 };

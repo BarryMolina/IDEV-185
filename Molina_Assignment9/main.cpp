@@ -8,45 +8,29 @@
 #include "TaxReturn.h"
 using namespace std;
 
+// Menu function prototypes
 void mainMenu();
-void createReturn();
-void createDeduction();
-void itemizeDeductions();
+TaxReturn *createReturn();
+Deduction *createDeduction(FilingStatus filingStatus);
 void taxReturnSummary(TaxReturn *taxReturn);
 
+// Utility functions
 void clearScreen();
 
+// Current tax year
 const int year = 2020;
-TaxReturn *taxReturn = nullptr;
 
 int main() {
     mainMenu();
-
-
-//    StandardDeduction standard(FilingStatus::Single);
-//    ItemizedDeduction itemized(300, 0, 188,
-//                               50, 500, 200);
-//    Deduction *deduction = nullptr;
-//    TaxReturn taxReturn(120000, FilingStatus::Single);
-//
-//    cout << fixed << setprecision(2);
-
-//    deduction = &standard;
-//    cout << "Standard Deduction: $" << deduction->calcDeduction() << endl;
-//    deduction = &itemized;
-//    cout << "Itemized Deduction: $" << deduction->calcDeduction() << endl;
-
-//    cout << status_str[int(standard.getFilingStatus())] << endl;
-
-//    taxReturn.setDeduction(&standard);
-//    taxReturnSummary(&taxReturn);
-
 
     return 0;
 }
 
 
+// User selects to create new tax return or exit
 void mainMenu() {
+    TaxReturn *taxReturn = nullptr;
+    Deduction *deduction = nullptr;
     int ans;
     clearScreen();
     cout << "Main Menu" << endl;
@@ -61,13 +45,20 @@ void mainMenu() {
         cin >> ans;
     }
     if (ans == 1) {
-        createReturn();
-        createDeduction();
-    }
+        taxReturn = createReturn();
+        deduction = createDeduction(taxReturn->getFilingStatus());
+        taxReturn->setDeduction(deduction);
+        taxReturnSummary(taxReturn);
 
+        // deduction deleted in TaxReturn destructor
+        delete taxReturn;
+        taxReturn = nullptr;
+        deduction = nullptr;
+    }
 }
 
-void createReturn() {
+// User selects filing status and enters gross income
+TaxReturn *createReturn() {
     FilingStatus status;
     double income;
     int ans;
@@ -92,10 +83,12 @@ void createReturn() {
     cout << "Enter gross income: ";
     cin >> income;
 
-    taxReturn = new TaxReturn(income, status);
+    return new TaxReturn(income, status);
 }
-void createDeduction() {
-    Deduction *deduction;
+
+// User selects standard or itemized deduction
+Deduction *createDeduction(FilingStatus filingStatus) {
+    Deduction *deduction = nullptr;
     int ans;
     clearScreen();
     cout << "Would you like to take the standard deduction" << endl;
@@ -111,24 +104,33 @@ void createDeduction() {
         cin >> ans;
     }
     if (ans == 1) {
-        deduction = new StandardDeduction(taxReturn->getFilingStatus());
+        deduction = new StandardDeduction(filingStatus);
     }
     else {
+        double homeMortgageInterest, incomeTaxes, investmentInterest,
+                medicalExpenses, charitableContributions, miscDeductions;
+
         clearScreen();
         cout << "\nEnter your home mortgage interest: ";
+        cin >> homeMortgageInterest;
         cout << "\nEnter income taxes: ";
+        cin >> incomeTaxes;
         cout << "\nEnter investment interest: ";
+        cin >> investmentInterest;
         cout << "\nEnter medical expenses: ";
+        cin >> medicalExpenses;
         cout << "\nEnter charitable contributions: ";
+        cin >> charitableContributions;
         cout << "\nEnter any other miscellaneous deductions: ";
+        cin >> miscDeductions;
 
+        deduction = new ItemizedDeduction(homeMortgageInterest, incomeTaxes, investmentInterest,
+                                          medicalExpenses, charitableContributions, miscDeductions);
     }
-    taxReturn->setDeduction(deduction);
-
-
+    return deduction;
 }
-void itemizeDeductions();
 
+// Display tax return summary
 void taxReturnSummary(TaxReturn *taxReturn) {
     cout << fixed << setprecision(2);
     cout << "Filing Status: " << status_str[int(taxReturn->getFilingStatus())] << endl;

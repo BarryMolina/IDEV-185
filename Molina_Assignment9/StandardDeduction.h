@@ -9,6 +9,7 @@
 #include "FilingStatus.h"
 
 
+// Derived class representing a standard deduction
 class StandardDeduction : public Deduction {
 private:
     static const double single_filer;
@@ -18,7 +19,6 @@ private:
 
 public:
     StandardDeduction(FilingStatus filingStatus);
-
     static const double getSingleFiler();
     static const double getHeadOfHousehold();
     static const double getFilingJointly();
