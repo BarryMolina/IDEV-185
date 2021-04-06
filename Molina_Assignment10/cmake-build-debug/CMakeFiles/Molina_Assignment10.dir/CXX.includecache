@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment10/Contact.h
+string
+-
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment10/main.cpp
+iostream
+-
+fstream
+-
+string
+-
+Contact.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment10/Contact.h
+

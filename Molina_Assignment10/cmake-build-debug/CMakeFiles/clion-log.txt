@@ -1,0 +1,4 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/barrymolina/MATC/SP2021/c++/Molina_Assignment10
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/barrymolina/MATC/SP2021/c++/Molina_Assignment10/cmake-build-debug
