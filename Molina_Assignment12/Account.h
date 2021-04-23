@@ -27,9 +27,15 @@ private:
     std::string password;
 public:
     Account(const std::string &username, const std::string &password);
+    const std::string &getUsername() const;
+    const std::string &getPassword() const;
+    void setUsername(const std::string &username);
+    void setPassword(const std::string &password);
+    bool checkLength(std::string password);
     bool checkSpecialChars(std::string password);
     bool checkNumbers(std::string password);
     bool checkCapitalized(std::string password);
+    bool logIn(std::string user, std::string pass);
 };
 
 

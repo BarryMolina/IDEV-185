@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment12/Account.h
+string
+-
+exception
+-
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment12/main.cpp
+iostream
+-
+vector
+-
+Account.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment12/Account.h
+
