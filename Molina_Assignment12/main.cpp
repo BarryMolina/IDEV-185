@@ -14,19 +14,13 @@ void login();
 void createAccount();
 void manageAccount(Account *account);
 
+// Application start. Contains Main Menu
 int main() {
     bool quit = false;
     int ans;
 
-//    Account *bazza = new Account("bazza", "Bazzawashere2!");
-//    accounts.push_back(bazza);
-
     while (!quit) {
         cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-//        cout << "accounts:" << endl;
-//        for (Account *a : accounts) {
-//            cout << a->getUsername() << " " << a->getPassword() << endl;
-//        }
         cout << "Main Menu\n" << endl;
         cout << "1. Create new account" << endl;
         cout << "2. Log in to existing account" << endl;
@@ -51,6 +45,7 @@ int main() {
     return 0;
 }
 
+// Ask for username and password and attempt to log user in
 void login() {
     string username;
     string password;
@@ -79,6 +74,7 @@ void login() {
     }
 }
 
+// Ask for username and password and attempt to create a new account
 void createAccount() {
     string username;
     string password;
@@ -102,6 +98,7 @@ void createAccount() {
     }
 }
 
+// User manages account
 void manageAccount(Account *account) {
     int ans;
     bool quit = false;

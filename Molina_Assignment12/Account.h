@@ -21,6 +21,7 @@ public:
     }
 };
 
+// Stores user credentials and provides function to access and alter them
 class Account {
 private:
     std::string username;
@@ -34,7 +35,7 @@ public:
     bool checkLength(std::string password);
     bool checkSpecialChars(std::string password);
     bool checkNumbers(std::string password);
-    bool checkCapitalized(std::string password);
+    bool checkCapitals(std::string password);
     bool logIn(std::string user, std::string pass);
 };
 
