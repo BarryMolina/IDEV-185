@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment12/Account.cpp
+Account.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Assignment12/Account.h
+regex
+-
+
 /Users/barrymolina/MATC/SP2021/c++/Molina_Assignment12/Account.h
 string
 -
