@@ -4,11 +4,16 @@
 
 using namespace std;
 
+// Application start
 int main() {
+    // Object to read in file stream
     ifstream infile;
+    // string to capture filename
     string filename;
+    // string to hold one line of file input
     string line;
 
+    // Application prompt
     cout << "Enter the name of one of the following pre-loaded files" << endl;
     cout << "or any other file that may exist in the application directory\n" << endl;
     cout << "Hamlet.txt" << endl;
@@ -19,8 +24,10 @@ int main() {
     cin >> filename;
     cin.ignore();
 
+    // Attempt to open file
     infile.open(filename);
 
+    // If file exists, read in 20 lines at a time.
     if (infile) {
         while (infile) {
             cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
@@ -36,6 +43,7 @@ int main() {
             cin.get();
         }
     }
+    // File not found. Exit application
     else {
         cout << "\nFile does not exist. Goodbye" << endl;
     }
