@@ -10,6 +10,8 @@
 Item.h
 /Users/barrymolina/MATC/SP2021/c++/Molina_Final/Item.h
 
+/Users/barrymolina/MATC/SP2021/c++/Molina_Final/InputError.h
+
 /Users/barrymolina/MATC/SP2021/c++/Molina_Final/Item.h
 string
 -
@@ -17,6 +19,8 @@ string
 /Users/barrymolina/MATC/SP2021/c++/Molina_Final/MeasuredProduct.h
 Item.h
 /Users/barrymolina/MATC/SP2021/c++/Molina_Final/Item.h
+
+/Users/barrymolina/MATC/SP2021/c++/Molina_Final/MenuError.h
 
 /Users/barrymolina/MATC/SP2021/c++/Molina_Final/main.cpp
 iostream
@@ -31,4 +35,8 @@ FreshProduce.h
 /Users/barrymolina/MATC/SP2021/c++/Molina_Final/FreshProduce.h
 MeasuredProduct.h
 /Users/barrymolina/MATC/SP2021/c++/Molina_Final/MeasuredProduct.h
+MenuError.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Final/MenuError.h
+InputError.h
+/Users/barrymolina/MATC/SP2021/c++/Molina_Final/InputError.h
 

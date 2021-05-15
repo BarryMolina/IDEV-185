@@ -12,12 +12,12 @@
 // is calculated by weight
 class FreshProduce : public Item {
 private:
-    double pounds = 0;
+    int pounds = 0;
 public:
-    FreshProduce(string name, double price, double pounds);
+    FreshProduce(string name, double price, int pounds);
     double calcFullPrice();
-    double getPounds();
-    void setPounds(double);
+    int getPounds();
+    void setPounds(int);
     int amount();
 };
 

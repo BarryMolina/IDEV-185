@@ -9,6 +9,8 @@
 #include <sstream>
 #include "FreshProduce.h"
 #include "MeasuredProduct.h"
+#include "MenuError.h"
+#include "InputError.h"
 using namespace std;
 
 // Global constants
@@ -49,6 +51,10 @@ void checkout();
 // Utility functions
 void clearScreen();
 void clearOrder();
+int convertInput(string input);
+void validateChoice(int maxChoice, int input);
+int getMenuSelection(int maxChoice);
+int inputAmount();
 
 int main() {
     bool quit = false;
@@ -72,7 +78,6 @@ int main() {
 // orderStart gets the users delivery preference
 void orderStart() {
     int choice;
-    bool validChoice = true;
 
     clearScreen();
     cout << "ORDER START" << endl;
@@ -80,31 +85,23 @@ void orderStart() {
     cout << "(1) Pickup" << endl;
     cout << "(2) Delivery" << endl;
     cout << "(3) Exit" << endl;
-    cout << "\n>>> ";
-    cin >> choice;
 
-    do {
-        switch (choice) {
-            case 2:
-                Item::setDelivery(DELIVERY_FEE);
-                Item::setTip(TIP);
-            case 1:
-                mainMenu();
-            case 3:
-                break;
-            default:
-                validChoice = false;
-                cout << "\nPlease enter a valid option" << endl;
-                cout << "\n>>> ";
-                cin >> choice;
-        }
-    } while (!validChoice);
+    choice = getMenuSelection(3);
+
+    switch (choice) {
+        case 2:
+            Item::setDelivery(DELIVERY_FEE);
+            Item::setTip(TIP);
+        case 1:
+            mainMenu();
+        case 3:
+            break;
+    }
 }
 
 // The Main Menu lets the user pick a category of food
 void mainMenu() {
     int choice;
-    bool validChoice = true;
     bool checkedOut = false;
 
     while(!checkedOut) {
@@ -115,39 +112,32 @@ void mainMenu() {
         cout << "(2) Meat and Seafood" << endl;
         cout << "(3) Frozen Foods" << endl;
         cout << "(4) Check Out" << endl;
-        cout << "\n>>> ";
-        cin >> choice;
 
-        do {
-            switch (choice) {
-                case 1:
-                    freshProduceMenu();
-                    break;
-                case 2:
-                    meatAndSeafoodMenu();
-                    break;
-                case 3:
-                    frozenFoodsMenu();
-                    break;
-                case 4:
-                    checkout();
-                    checkedOut = true;
-                    break;
-                default:
-                    validChoice = false;
-                    cout << "\nPlease enter a valid option" << endl;
-                    cout << "\n>>> ";
-                    cin >> choice;
-            }
-        } while (!validChoice);
+        choice = getMenuSelection(4);
+
+        switch (choice) {
+            case 1:
+                freshProduceMenu();
+                break;
+            case 2:
+                meatAndSeafoodMenu();
+                break;
+            case 3:
+                frozenFoodsMenu();
+                break;
+            case 4:
+                checkout();
+                checkedOut = true;
+                break;
+        }
     }
 }
 
 // User shops for fresh produce
 void freshProduceMenu() {
     const int returnOption = freshProduceSize + 1;
-    double pounds;
-    int choice,
+    int pounds,
+        choice,
         selectIdx;
     bool goBack = false;
 
@@ -166,20 +156,13 @@ void freshProduceMenu() {
         }
         cout << "(" << (returnOption) << ") Return to Main Menu" << endl;
 
-        cout << "\n>>> ";
-        cin >> choice;
-
-        while (choice < 1 || choice > returnOption) {
-            cout << "\nPlease enter a valid option" << endl;
-            cout << "\n>>> ";
-            cin >> choice;
-        }
+        choice = getMenuSelection(returnOption);
 
         if (choice == returnOption)
             goBack = true;
         else {
             cout << "\nEnter pounds: ";
-            cin >> pounds;
+            pounds = inputAmount();
 
             item = new FreshProduce(
                     freshProduceNames[choice - 1],
@@ -201,8 +184,8 @@ void freshProduceMenu() {
 // User shops for meat and seafood
 void meatAndSeafoodMenu() {
     const int returnOption = meatAndSeafoodSize + 1;
-    double pounds;
-    int choice,
+    int pounds,
+        choice,
         selectIdx;
     bool goBack = false;
 
@@ -221,20 +204,13 @@ void meatAndSeafoodMenu() {
         }
         cout << "(" << (returnOption) << ") Return to Main Menu" << endl;
 
-        cout << "\n>>> ";
-        cin >> choice;
-
-        while (choice < 1 || choice > returnOption) {
-            cout << "\nPlease enter a valid option" << endl;
-            cout << "\n>>> ";
-            cin >> choice;
-        }
+        choice = getMenuSelection(returnOption);
 
         if (choice == returnOption)
             goBack = true;
         else {
             cout << "\nEnter pounds: ";
-            cin >> pounds;
+            pounds = inputAmount();
 
             item = new FreshProduce(
                     meatAndSeafoodNames[choice - 1],
@@ -277,20 +253,13 @@ void frozenFoodsMenu() {
         }
         cout << "(" << (returnOption) << ") Return to Main Menu" << endl;
 
-        cout << "\n>>> ";
-        cin >> choice;
-
-        while (choice < 1 || choice > returnOption) {
-            cout << "\nPlease enter a valid option" << endl;
-            cout << "\n>>> ";
-            cin >> choice;
-        }
+        choice = getMenuSelection(returnOption);
 
         if (choice == returnOption)
             goBack = true;
         else {
             cout << "\nEnter quantity: ";
-            cin >> quantity;
+            quantity = inputAmount();
 
             item = new MeasuredProduct(
                     frozenFoodNames[choice - 1],
@@ -375,3 +344,65 @@ void clearOrder() {
     }
     cart.clear();
 }
+
+// Convert string to int. Throw InputError if non-numeric character is found.
+int convertInput(string input) {
+    for (char c : input) {
+        if (isdigit(c) == 0) {
+            throw InputError();
+        }
+    }
+    return stoi(input);
+}
+
+// Throw MenuError if input is outside range given
+void validateChoice(int maxChoice, int input) {
+    if (input < 1 || input > maxChoice) {
+        throw MenuError();
+    }
+}
+
+// Get valid menu selection given a max choice.
+int getMenuSelection(int maxChoice) {
+    string input;
+    int choice;
+    bool validChoice = false;
+
+    do {
+        cout << "\n>>> ";
+        cin >> input;
+
+        try {
+            choice = convertInput(input);
+            validateChoice(maxChoice, choice);
+            validChoice = true;
+        }
+        catch (InputError inputError) {
+            cout << "\nInvalid input character detected. Closing application." << endl;
+            exit(EXIT_FAILURE);
+        }
+        catch (MenuError menuError) {
+            cout << "\nMenu choice entered is out of range. Please try again" << endl;
+        }
+    } while (!validChoice);
+
+    return choice;
+}
+
+// Get valid numerical input
+int inputAmount() {
+    string input;
+    int amount;
+
+    cin >> input;
+
+    try {
+        amount = convertInput(input);
+    }
+    catch (InputError inputError) {
+        cout << "\nInvalid input character detected. Closing application." << endl;
+        exit(EXIT_FAILURE);
+    }
+    return amount;
+}
+

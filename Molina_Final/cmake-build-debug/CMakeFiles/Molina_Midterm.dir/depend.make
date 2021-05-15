@@ -13,7 +13,9 @@ CMakeFiles/Molina_Midterm.dir/MeasuredProduct.cpp.o: ../MeasuredProduct.cpp
 CMakeFiles/Molina_Midterm.dir/MeasuredProduct.cpp.o: ../MeasuredProduct.h
 
 CMakeFiles/Molina_Midterm.dir/main.cpp.o: ../FreshProduce.h
+CMakeFiles/Molina_Midterm.dir/main.cpp.o: ../InputError.h
 CMakeFiles/Molina_Midterm.dir/main.cpp.o: ../Item.h
 CMakeFiles/Molina_Midterm.dir/main.cpp.o: ../MeasuredProduct.h
+CMakeFiles/Molina_Midterm.dir/main.cpp.o: ../MenuError.h
 CMakeFiles/Molina_Midterm.dir/main.cpp.o: ../main.cpp
 

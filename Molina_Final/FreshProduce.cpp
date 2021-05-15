@@ -7,7 +7,7 @@
 #include "FreshProduce.h"
 
 // Calls the Item superclass constructor with given values
-FreshProduce::FreshProduce(string name, double price, double pounds) : Item(name, price) {
+FreshProduce::FreshProduce(string name, double price, int pounds) : Item(name, price) {
     this->pounds = pounds;
 }
 
@@ -17,12 +17,12 @@ double FreshProduce::calcFullPrice() {
 }
 
 // Return pounds
-double FreshProduce::getPounds() {
+int FreshProduce::getPounds() {
     return pounds;
 }
 
 // Set pounds
-void FreshProduce::setPounds(double p) {
+void FreshProduce::setPounds(int p) {
     pounds = p;
 }
 

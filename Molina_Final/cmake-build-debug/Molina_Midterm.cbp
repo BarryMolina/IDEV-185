@@ -86,6 +86,9 @@
 		<Unit filename="/Users/barrymolina/MATC/SP2021/c++/Molina_Final/FreshProduce.h">
 			<Option target="Molina_Midterm"/>
 		</Unit>
+		<Unit filename="/Users/barrymolina/MATC/SP2021/c++/Molina_Final/InputError.h">
+			<Option target="Molina_Midterm"/>
+		</Unit>
 		<Unit filename="/Users/barrymolina/MATC/SP2021/c++/Molina_Final/Item.cpp">
 			<Option target="Molina_Midterm"/>
 		</Unit>
@@ -96,6 +99,9 @@
 			<Option target="Molina_Midterm"/>
 		</Unit>
 		<Unit filename="/Users/barrymolina/MATC/SP2021/c++/Molina_Final/MeasuredProduct.h">
+			<Option target="Molina_Midterm"/>
+		</Unit>
+		<Unit filename="/Users/barrymolina/MATC/SP2021/c++/Molina_Final/MenuError.h">
 			<Option target="Molina_Midterm"/>
 		</Unit>
 		<Unit filename="/Users/barrymolina/MATC/SP2021/c++/Molina_Final/main.cpp">
